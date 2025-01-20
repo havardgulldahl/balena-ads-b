@@ -271,6 +271,15 @@ services:
     labels:
       io.balena.features.balena-api: '1'
       io.balena.features.supervisor-api: '1'
+  ledstatus:
+    build: ./ledstatus
+    image: ledstatus
+    restart: unless-stopped
+    environment:
+      - LEDSTATUS_USE_BOTH_SIDES=false
+    devices:
+      - "/dev/bus/usb"
+
 # Optional: Uncomment to enable custom mlat server.
 #  mlat-client:
 #    depends_on:
@@ -286,6 +295,5 @@ services:
 #      - MLAT_SERVER=
 #    labels:
 #      io.balena.features.supervisor-api: '1'
-
 
     
