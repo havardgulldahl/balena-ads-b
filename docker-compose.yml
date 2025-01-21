@@ -275,6 +275,7 @@ services:
     build: ./ledstatus
     image: ledstatus
     restart: unless-stopped
+    privileged: true
     environment:
       - LEDSTATUS_USE_BOTH_SIDES=false
     devices:
