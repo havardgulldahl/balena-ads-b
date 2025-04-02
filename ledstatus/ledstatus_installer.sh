@@ -7,11 +7,13 @@ function install_bluld {
 
     # https://github.com/ktgeek/bluld?tab=readme-ov-file#making
     cd /tmp;
-    curl -O https://github.com/ktgeek/bluld/archive/refs/tags/v1.1.2.tar.gz
+    install_packages libhidapi-dev build-essential cmake;
+    curl -LO https://github.com/ktgeek/bluld/archive/refs/tags/v1.1.2.tar.gz
     tar -xvf v1.1.2.tar.gz
     cd bluld-1.1.2
     cmake .
     make
+    cp bluld /usr/local/bin
 }
 
 function install_ledstatus_daemon {
