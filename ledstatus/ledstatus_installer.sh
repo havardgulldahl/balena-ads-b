@@ -13,7 +13,7 @@ function install_bluld {
     cd bluld-1.1.2
     cmake .
     make
-    cp bluld /usr/local/bin
+    cp bluld /usr/local/sbin/
 }
 
 function install_ledstatus_daemon {
